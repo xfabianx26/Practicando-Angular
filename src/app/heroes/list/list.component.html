@@ -1,0 +1,17 @@
+<h3>Listado de Familiares</h3>
+
+<div *ngIf="deletedHero; else nothingWasDeleted ">
+    <h3>Familiar borrado <small class="text-danger">{{deletedHero}}</small> </h3>
+</div>
+<ng-template #nothingWasDeleted>
+    <h3 >No ha borrado nada.</h3>
+</ng-template>
+
+<button *ngIf="familias.length>0"
+(click)="removeLastHero()"
+ class="btn btn-outline-danger">Borrar Familiar</button>
+
+
+<ul *ngFor="let f of familias" class="mt-2 list-group">
+    <li class="list-group-item">{{f }}</li>
+</ul>
